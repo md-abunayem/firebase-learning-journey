@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:learn_firebase/ForgotPasswordPage/forgotpasswordpage.dart';
 import 'package:learn_firebase/homepage.dart';
 import 'package:learn_firebase/signuppage.dart';
 import 'package:learn_firebase/uiHelper.dart';
@@ -94,9 +95,14 @@ class _LogInPageState extends State<LogInPage> {
                         return SignUpPage();
                       }));
                     },
-                    child: Text("Sign Up"))
+                    child: Text("Sign Up")),
+                
               ],
-            )
+            ),
+            SizedBox(height: 20,),
+            TextButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgotPasswordPage()));
+            }, child: Text("Forgot Password",style: TextStyle(fontSize: 20),))
           ],
         ),
       ),

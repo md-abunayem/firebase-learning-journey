@@ -15,17 +15,24 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   final user = FirebaseAuth.instance.currentUser;
 
+
   @override
   void initState() {
+    //add logic for check user if exist redirect to home page otherwise login page
     // final user = FirebaseAuth.instance.currentUser;
     User? user = FirebaseAuth.instance.currentUser;
-
     super.initState();
-    Timer(Duration(seconds: 2),(){
-      if(user != null){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){return HomePage();}));
-      }else{
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){return LogInPage();}));
+    Timer(Duration(seconds: 2), () {
+      if (user != null) {
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) {
+              return HomePage();
+            }));
+      } else {
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) {
+              return LogInPage();
+            }));
       }
     });
   }
@@ -39,7 +46,13 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Firebase Learning",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 40),),
+              Text(
+                "Firebase Learning",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 40),
+              ),
               SizedBox(height: 20),
               CircularProgressIndicator(),
             ],
