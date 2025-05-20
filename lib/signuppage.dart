@@ -14,7 +14,7 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
-/*
+
   signup(String email, String password) async {
     if (email == "" || password == "") {
       UiHelper.CustomALertBox(context, "Enter required fields");
@@ -29,16 +29,16 @@ class _SignUpPageState extends State<SignUpPage> {
       }
     }
   }
-*/
+
 
   //OR
-
+/*
   signup(String email, String password) async {
   if (email.isEmpty || password.isEmpty) {
     UiHelper.CustomALertBox(context, "Enter required fields");
     return;
   }
-
+  //else
   try {
     UserCredential userCredential = await FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email, password: password);
@@ -51,7 +51,7 @@ class _SignUpPageState extends State<SignUpPage> {
     UiHelper.CustomALertBox(context, ex.message ?? "An error occurred");
   }
 }
-
+*/
 
 
   @override
