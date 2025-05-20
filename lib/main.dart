@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:learn_firebase/ForgotPasswordPage/forgotpasswordpage.dart';
 import 'package:learn_firebase/Splash/splashscreen.dart';
 import 'package:learn_firebase/loginpage.dart';
 
